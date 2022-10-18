@@ -1,0 +1,114 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2020/9/11/3f1c8aec-f2e5-4205-946f-0feb79534813.jpg",
+      "judul": "Tali Anjing ukuran 20cm",
+      "harga": 20000,
+      "merchantName": "PetShop",
+      "merchantProfile": "https://cdn-cas.orami.co.id/parenting/images/Pet_Shop_Jakarta_www.inquirer.com.width-800.jpg",
+      "rating": 4.5,
+      "sold": 51,
+      "stok": 10,
+      "kategori": "Accesories",
+      "brand": "Made in China",
+      "berat": "300 gram",
+      "deskripsi": "100% merek baru dan kualitas tinggi Dengan fungsi rantai P, pengendalian anjing dengan kekuatan yang besar sangat efektif. Cara terbaik adalah menggunakan tali kekang untuk anjing."
+    },
+    {
+      "image": "https://ae01.alicdn.com/kf/HTB1pphKelOD3KVjSZFFq6An9pXa1/Halloween-Anjing-Peliharaan-Aksesoris-Anjing-Oto-Kucing-Dasi-Kupu-kupu-Anjing-Bandana-Aksesoris-Hewan-Peliharaan-untuk.jpg_640x640.jpg",
+      "judul": "Halloween Anjing Peliharaan Aksesoris Anjing Oto Kucing Dasi Kupu-kupu Anjing Bandana Aksesoris",
+      "harga": 20000,
+      "merchantName": "88Shop",
+      "merchantProfile": "https://pip.semarangkota.go.id/wp-content/uploads/2021/03/pet-shop.jpg",
+      "rating": 5,
+      "sold": 100,
+      "stok": 15,
+      "discount": 50,
+      "beforePrice": 40000,
+      "kategori": "Accesories",
+      "brand": "Nakoski",
+      "berat": "500 gram",
+      "id": 2,
+      "deskripsi": "Warna: Hitam, ungu, hijau Bahan: Kapas Ukuran: Cocok untuk ketebalan leher 25-49 cm (9.84 * 19.29in) Paket Termasuk: 1 x Hewan Peliharaan bandana"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61oHqFE3jAL._SX466_.jpg",
+      "judul": "Pedigree Dry Food for Adult Dogs, Meat & Rice Flavour, 10kg Pack",
+      "harga": 150000,
+      "merchantName": "Dogshop",
+      "merchantProfile": "https://cdn-cas.orami.co.id/parenting/images/Pet_Shop_Jakarta_www.381info.com.width-800.jpg",
+      "rating": 5,
+      "sold": 150,
+      "stok": 20,
+      "kategori": "Dog Food",
+      "brand": "Pedigree",
+      "berat": "10 kg",
+      "deskripsi": "Complete & balanced dog food, a perfect food for adult dogs",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "ken@mail.com",
+      "password": "ken123",
+      "username": "laland",
+      "phone": "+6281334532346",
+      "id": 1
+    },
+    {
+      "email": "123@mail.com",
+      "password": "kenken",
+      "username": "ken",
+      "phone": "+6281345643321",
+      "id": 2
+    },
+    {
+      "username": "kenkenken",
+      "email": "kenken@mail.com",
+      "phone": "6208362732",
+      "password": "lalala123",
+      "id": 3
+    },
+    {
+      "username": "asdasdasd",
+      "email": "asdasd@mail.com",
+      "phone": "62832834897",
+      "password": "kenkenken23",
+      "id": 4
+    },
+    {
+      "username": "cobacobi",
+      "email": "coba@mail.com",
+      "phone": "62081363728111",
+      "password": "coba1234",
+      "id": 5
+    }
+  ],
+  "cart": [
+    {
+      "userId": 5,
+      "productId": 1,
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "userId": 5,
+      "productId": 2,
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "productId": 1,
+      "quantity": 8,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "productId": 2,
+      "quantity": 2,
+      "id": 4
+    }
+  ]
+}

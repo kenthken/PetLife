@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "json-server",
+      "author": "typicode",
+      "id": 2
+    },
+    {
+      "title": "asdasd",
+      "author": "asdasdas",
+      "id": 3
+    },
+    {
+      "title": "asdasd",
+      "author": "asdasdas",
+      "id": 4
+    },
+    {
+      "title": "asdasd",
+      "author": "asdasdas",
+      "id": 5
+    },
+    {
+      "title": "ken",
+      "author": "ken",
+      "id": 6
+    },
+    {
+      "title": "ken",
+      "author": "ken",
+      "id": 7
+    },
+    {
+      "title": "ken",
+      "author": "ken",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "lalalannd"
+  }
+}

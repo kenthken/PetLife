@@ -9,6 +9,11 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "splash": {
+      "image":"",
+      "resizeMode":"contain"
+    }
+    ,
     "assetBundlePatterns": [
       "**/*"
     ],
