@@ -3,5 +3,5 @@ Petlife application, build with React Native, Redux, JSON server (for API), Axio
 
 TO START LOCAL API 
 GO ON TERMINAL AND TYPE
---> cd fakeapi
---> json-server --watch db.json
+1. cd fakeapi
+2. json-server --watch db.json
