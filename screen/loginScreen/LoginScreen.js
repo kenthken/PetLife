@@ -24,17 +24,9 @@ const LoginScreen = () => {
 
     const navigation = useNavigation();
     const dispatch = useDispatch()
-    const selectorCartLength = useSelector(selectCartLength)
-    const [cartState, setCartState] = useState([])
-    const selectorDetailCart = useSelector(selectDetailCart)
-    const selectorUserId = useSelector(selectId)
     const selectorCart = useSelector(selectCart)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [userData, setUserData] = useState(false)
-    // const [username, setUsername] = useState("")
-    const [usernamebisa, setUsernameBisa] = useState("")
-    const [userLogin, setUserLogin] = useState([])
     const [users, setUsers] = useState([])
     const [emailBorder, setEmailBorder] = useState({
         borderWidth: 0,
@@ -48,11 +40,7 @@ const LoginScreen = () => {
 
 
     const login = () => {
-        const UserData = {
-            id: usernameId,
-            name: username1,
 
-        }
         let trueornot = false
         let username1 = ""
         let usernameId = ""
@@ -62,12 +50,9 @@ const LoginScreen = () => {
                 trueornot = true
                 username1 = user.username
                 usernameId = user.id
-                console.log("user", users.length)
                 dispatch(setUsername(username1))
                 dispatch(setId(usernameId))
                 dispatch(setCartLength(selectorCart.length))
-            
-
                 return
             }
         })
@@ -87,18 +72,12 @@ const LoginScreen = () => {
 
     }
 
-    const getDataCart = () => {
-
-    }
-
     useEffect(() => {
         axios.get("http://10.0.2.2:3000/users")
             .then(res => {
                 setUsers(res.data)
             })
             .catch(error => console.log(error));
-
-        // getDataCart()
     }, [])
 
     useLayoutEffect(() => {
@@ -117,10 +96,6 @@ const LoginScreen = () => {
     if (!fontsLoaded) {
         return null;
     }
-
-
-
-
 
 
     return (
@@ -153,25 +128,6 @@ const LoginScreen = () => {
 
                     }} onPress={(login)}>Login</Text>
                 </View>
-
-                {/* <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: 10 }}>
-                    <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
-                    <View>
-                        <Text style={{ width: 50, textAlign: 'center', fontFamily: "Poppins_400Regular", fontSize: 10 }}>Or with</Text>
-                    </View>
-                    <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
-                </View>
-
-                <View style={styles.bottomContainer}>
-                    <View style={styles.google}>
-                        <Image source={google} style={{ marginRight: 12 }} />
-                        <Text style={{ fontFamily: 'Poppins_400Regular', color: 'white' }}>Google</Text>
-                    </View>
-                    <View style={styles.fb}>
-                        <Image source={fb} style={{ marginRight: 12 }} />
-                        <Text style={{ fontFamily: 'Poppins_400Regular', color: 'white' }}>Facebook</Text>
-                    </View>
-                </View> */}
             </View>
         </SafeAreaView>
     )

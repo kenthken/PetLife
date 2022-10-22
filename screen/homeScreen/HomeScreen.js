@@ -24,37 +24,29 @@ import Card from './card/Card';
 import img1 from '../../assets/homeIcon/image-58.png'
 import img2 from '../../assets/homeIcon/image-59.png'
 import img3 from '../../assets/homeIcon/image-60.png'
-import { AntDesign } from '@expo/vector-icons';
 import axios, { Axios } from 'axios';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCart, selectCartLength, selectId, selectTemptCart, selectUsername, setCart, setCartLength } from '../../features/CounterSlice.js';
+import { selectCart, selectCartLength, selectId, selectTemptCart, selectUsername, setCart, setCartLength, setTemptCart } from '../../features/CounterSlice.js';
 import { setProductData } from '../../features/productSlice'
 import { selectProduct } from '../../features/productSlice.js'
-import callProductDataAccesories from '../../fakeAPI/callProductDataAccesories.js';
 import NavBar from '../navbarTool/NavBar.js';
-import NotAvailableFeatures from '../popupScreen/NotAvailableFeatures.js';
 
-const windowHeight = Dimensions.get('window').height;
+
+
 const windowWidth = Dimensions.get('window').width;
 
 
 function HomeScreen() {
   const navigation = useNavigation();
-  const [homeIcon, setHomeIcon] = useState("blue")
-  const [cartState, setCartState] = useState([])
   const [popup, setPopup] = useState(false)
   const dispatch = useDispatch()
   const selectorProduct = useSelector(selectProduct)
   const selector = useSelector(selectUsername)
   const selectorUserId = useSelector(selectId)
-  const selectorCart = useSelector(selectCart)
   const selectorCartLength = useSelector(selectCartLength)
-  const selectorTemptCart = useSelector(selectTemptCart)
-  const selectorId = useSelector(selectId)
-  const productAccesories = callProductDataAccesories()
 
   const getData = () => {
     axios.get("http://10.0.2.2:3000/product")
@@ -66,19 +58,22 @@ function HomeScreen() {
 
   }
 
+  
   const getDataCart = () => {
     axios.get("http://10.0.2.2:3000/cart", { params: { userId: selectorUserId } })
       .then(res => {
         const data = res.data
-        data.map((cart) => {
-          console.log("cart", cart)
-          dispatch(setCart(cart))
-        })
 
-        dispatch(setCartLength(data.length))
+        if (selectorCartLength == data.length) {
+          return
+        } else if (selectorCartLength != data.length || selectorCartLength == 0) {
+          data.map((cart) => {
 
+            dispatch(setCart(cart))
+          })
+          dispatch(setCartLength(data.length))
+        }
       })
-
   }
 
   const PopUp = () => {
@@ -103,7 +98,7 @@ function HomeScreen() {
     )
   }
 
-  console.log("tempt", selectorCart)
+
   useEffect(() => {
 
     getData()
@@ -154,7 +149,7 @@ function HomeScreen() {
 
   const PetCategories = ({ title, img }) => {
     return (
-      <TouchableWithoutFeedback onPress={()=>{setPopup(true)}}>
+      <TouchableWithoutFeedback onPress={() => { setPopup(true) }}>
         <View style={{ height: 120, width: 150, flexDirection: 'column-reverse', marginRight: 10 }}>
 
           <View style={{ height: 90, width: 150, backgroundColor: '#3DCEEE', borderRadius: 16, justifyContent: 'center', paddingLeft: '20%' }}>
@@ -182,7 +177,7 @@ function HomeScreen() {
             <View style={{
               elevation: 15, shadowColor: 'black', width: '100%', backgroundColor: '#09CEF9', borderBottomLeftRadius: 9, borderBottomRightRadius: 9
             }}>
-              <ImageCrousel img={img1} img2={img2} img3={img3} height={181} />
+              <ImageCrousel img1={img1} img2={img2} img3={img3} height={181} />
             </View>
 
             <View style={{ paddingHorizontal: 15, marginTop: 10 }}>
@@ -197,15 +192,15 @@ function HomeScreen() {
                     <TextInput editable={false} style={{ flex: 1 }} placeholder="Search" />
                   </View>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={()=>{setPopup(true)}}>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={notificationIcon} />
-                </View>
+                <TouchableWithoutFeedback onPress={() => { setPopup(true) }}>
+                  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={notificationIcon} />
+                  </View>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={()=>{setPopup(true)}}>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={chatIcon} />
-                </View>
+                <TouchableWithoutFeedback onPress={() => { setPopup(true) }}>
+                  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={chatIcon} />
+                  </View>
                 </TouchableWithoutFeedback>
               </View>
             </View>

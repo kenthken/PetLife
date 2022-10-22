@@ -30,22 +30,6 @@ class SplashScreen extends Component {
     }
 }
 
-// const SplashScreen = () => {
-    
-//     useEffect(() => {
-        
-//         setTimeout(() => {
-//             this.props.navigation.dispatch(StackActions.replace('Register'))
-//         }, 3000)
-//     }, [])
-
-//     return (
-//         <View style={styles.background}>
-//             <Image source={logo} />
-//         </View>
-//     )
-// }
-
 export default SplashScreen
 
 const styles = StyleSheet.create({

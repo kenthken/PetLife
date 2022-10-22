@@ -24,7 +24,6 @@ const SearchScreen = () => {
     const [search, setSearch] = useState("")
     const selectorProduct = useSelector(selectProduct)
     const navigation = useNavigation()
-    const test = "abc"
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false
@@ -37,11 +36,11 @@ const SearchScreen = () => {
         Poppins_500Medium,
         Poppins_600SemiBold
     });
-    // console.log(selectorProduct);
+
     if (!fontsLoaded) {
         return <AppLoading />;
     }
-    // console.log(search)
+
     return (
         <SafeAreaView>
             <View style={{ width: windowWidth, height: 50, backgroundColor: "#09CEF9", borderRadius: 10, flexDirection: 'row', alignItems: 'center' }}>

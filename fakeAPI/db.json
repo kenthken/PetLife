@@ -101,14 +101,8 @@
     {
       "userId": 2,
       "productId": 1,
-      "quantity": 8,
+      "quantity": 6,
       "id": 3
-    },
-    {
-      "userId": 2,
-      "productId": 2,
-      "quantity": 2,
-      "id": 4
     }
   ]
 }

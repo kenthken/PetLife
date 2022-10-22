@@ -10,8 +10,6 @@ import { delCartTotal, selectCartTotal } from '../../features/CartSlice';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 const NavBar = () => {
-  // const [homeIcon, setHomeIcon] = useState("blue")
-  // const [cartIcon, setCartIcon] = useState("")
   const dispatch = useDispatch()
   const selectorHomeIconColor = useSelector(selectHomeIconColor)
   const selectorCartIconColor = useSelector(selectCartIconColor)
@@ -24,7 +22,6 @@ const NavBar = () => {
     dispatch(setCartIcon("black"))
 
     selectorCartTotal.map((cart,index) => {
-      console.log("index", cart);
       dispatch(delCartTotal(cart.productId))
      }
     )

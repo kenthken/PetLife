@@ -67,10 +67,6 @@ const RegisterScreen = () => {
         }
 
         let check = /(?=.*[a-z])(?=.*[0-9])(?=.{8,})/;
-        console.log("username=> ", username.text)
-
-
-        console.log("pass", password.text)
 
         if (username.text == "" || email.text == "" || phone.text == "" || password.text == "" || confirmPassword.text == "") {
             setErrorMessage("All Input must be field")
@@ -125,7 +121,6 @@ const RegisterScreen = () => {
             setErrorMessage("Accept Terms and Conditions")
             return;
         }
-        console.log(userData)
         axios.post("http://10.0.2.2:3000/users", userData)
             .then(res => {
                 console.log(res.data)
