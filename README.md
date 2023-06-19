@@ -1,5 +1,5 @@
 # PetLife
-Petlife application, build with React Native, Redux, JSON server (for API), Axios, ect. please open up READ ME before start executing
+Petlife application, build with React Native, Redux, JSON server (for API), Axios, ect. please open up READ ME before start debuging
 
 TO START LOCAL API 
 GO ON TERMINAL AND TYPE
